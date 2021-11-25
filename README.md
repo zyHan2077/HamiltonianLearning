@@ -17,3 +17,7 @@ random:
 
 without randomness
 ![ising4](plot/strictIsing_n=1-8_violin.svg)
+
+## Random Ising, various b
+
+![var_b](plot/Ising_n=4_varb_violin.svg)
