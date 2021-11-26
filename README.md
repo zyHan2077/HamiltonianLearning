@@ -21,3 +21,9 @@ without randomness
 ## Random Ising, various b
 
 ![var_b](plot/Ising_n=4_varb_violin.svg)
+
+## Chemical Ham
+
+LiH4, top 20 largest terms
+
+![var_b](plot/LiH4_top_20_terms_barplot.svg)
