@@ -59,7 +59,7 @@ A = params["largeEnoughOffset"]
 totalHams = 50
 eachRounds = 10
 
-for j in 5:5
+for j in 2:2
     savingItems = []
     ave=0.0
     params["noise"] = modifiedParams[j][1]
