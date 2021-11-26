@@ -24,6 +24,10 @@ without randomness
 
 ## Chemical Ham
 
-LiH4, top 20 largest terms
+LiH4, top 25 largest terms
 
-![var_b](plot/LiH4_top_20_terms_barplot.svg)
+![topTerms](plot/LiH4_top_20_terms_barplot.svg)
+
+reconstruction with various b
+
+![var_b](plot/Ising_LiH4_n=6_varb_violin.svg)
