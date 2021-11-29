@@ -31,3 +31,5 @@ LiH4, top 25 largest terms
 reconstruction with various b
 
 ![var_b](plot/Ising_LiH4_n=6_varb_violin.svg)
+
+![var_b_plot](plot/LiH4_top_25_terms_scatterplot.svg)
