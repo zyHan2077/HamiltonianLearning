@@ -27,16 +27,16 @@ module noisyOracle
     # s: Dict, terms in the Hamiltonian
     # n: qubit number
     # σ: standard deviation of noise
-    function construct_oracle_f(s, n, σ)
+    function construct_oracle_f(s, n, σ; m=2, deltat=0.01, timeSteps=8)
 
         ham = zeros(2^n, 2^n)
         for (x, val) in s
             ham += val*construct_pauli(x, n)
         end
 
-        timeSteps = 8
-        t = [j*0.01 for j=1:timeSteps]
-        X = [ones(timeSteps) t.^2];
+        t = [j*deltat for j=1:timeSteps]
+        ms = vcat([0, (2:m)...])
+        X = hcat([t.^i for i in ms]...);
         Ut = exp.(-1im * fill(ham, timeSteps) .* t);
         UtDagger = conj.(transpose.(Ut));
         d = Normal(0.0, σ);

@@ -33,3 +33,7 @@ reconstruction with various b
 ![var_b](plot/Ising_LiH4_n=6_varb_violin.svg)
 
 ![var_b_plot](plot/LiH4_top_25_terms_scatterplot.svg)
+
+## Random Ising n=4, increasing taylor expansion & fitting order $O(t^m)$
+
+![var_m_plot](plot/RandomIsing_n=4_var_m_violin.svg)
