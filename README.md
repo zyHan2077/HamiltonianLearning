@@ -37,3 +37,14 @@ reconstruction with various b
 ## Random Ising n=4, increasing taylor expansion & fitting order $O(t^m)$
 
 ![var_m_plot](plot/RandomIsing_n=4_var_m_violin.svg)
+
+## other bar plots
+
+Ising, n=6
+![Isingbar](plot/Ising_n=6_top_20_terms_barplot.svg)
+
+## axis color changed
+
+![error](plot/Ising_n=4_varNoise_violin_axisWithColor.svg)
+
+![error](plot/LiH4_top_27_terms_redo_barplot.svg)
