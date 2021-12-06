@@ -35,7 +35,7 @@ module noisyOracle
         end
 
         t = [j*deltat for j=1:timeSteps]
-        ms = vcat([0, (2:m)...])
+        ms = vcat([0, 2, (4:m)...])
         X = hcat([t.^i for i in ms]...);
         Ut = exp.(-1im * fill(ham, timeSteps) .* t);
         UtDagger = conj.(transpose.(Ut));
