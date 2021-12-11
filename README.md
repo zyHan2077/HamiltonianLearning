@@ -48,3 +48,7 @@ Ising, n=6
 ![error](plot/Ising_n=4_varNoise_violin_axisWithColor.svg)
 
 ![error](plot/LiH4_top_27_terms_redo_barplot.svg)
+
+## box plot, demonstrating suppression of noise
+
+![error](plot/Ising_n=4_varb_boxplot.svg)
