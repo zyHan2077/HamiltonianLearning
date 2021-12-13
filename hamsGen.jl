@@ -1,4 +1,4 @@
-import Distributions.Normal
+# using Distributions.Normal
 
 function TFIsingHamiltonian1d(n)
     s = Dict()

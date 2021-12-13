@@ -47,16 +47,16 @@ end
 # modifiedParams:
 # (singleSensitivity, linesInPhase2, zeroSensitivity, b)
 modifiedParams = [
-    (5e-2, 100, 8e-2, 2),
-    (5e-3, 100, 3e-2, 3),
-    (5e-3, 100, 3e-2, 4),
-    (5e-3, 100, 3e-2, 5),
-    (5e-3, 100, 3e-2, 6),
-    (5e-3, 100, 5e-2, 7),
-    (5e-3, 200, 5e-2, 8)
+    (2e-2, 100, 4e-2, 2),
+    (1e-2, 100, 3e-2, 3),
+    (1e-2, 100, 3e-2, 4),
+    (1e-2, 100, 3e-2, 5),
+    (1e-2, 100, 3e-2, 6),
+    (8e-3, 100, 5e-2, 7),
+    (1e-2, 200, 5e-2, 8)
 ]
 
-verbose = parse(Bool, ARGS[1])
+verbose = false
 
 
 params = Dict(
@@ -73,9 +73,9 @@ A = params["largeEnoughOffset"]
 
 totalHams = 50
 eachRounds = 10
-n = 4
+n = 6
 
-for j in 4:6
+for j in 6:6
 
     savingItems = [] # will be the json output
     params["single"] = modifiedParams[j][1]
@@ -143,7 +143,7 @@ for j in 4:6
     println("average error: ", ave)
     println("fail rate ", failCount/(eachRounds * totalHams))
     
-    open("./data/strictlyRandomIsingRounds=500_b="*string(b)*".json", "w") do f
+    open("./data/strictly"*string(n)*"RandomIsingRounds=500_b="*string(b)*".json", "w") do f
         JSON.print(f, savingItems, 4)
     end
 end
