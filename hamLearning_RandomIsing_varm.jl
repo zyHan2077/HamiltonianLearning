@@ -13,8 +13,8 @@
 
 import Distributions.Normal
 using Distributed
-include("./utils.jl")
 include("./noisy_oracle.jl")
+include("./utils.jl")
 include("./hamsGen.jl")
 using LinearAlgebra, Statistics, .hamLearning_utils, .noisyOracle
 using FileIO, JSON
