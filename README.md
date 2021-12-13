@@ -36,6 +36,8 @@ reconstruction with various b
 
 ## Random Ising n=4, increasing taylor expansion & fitting order $O(t^m)$
 
+only even order is included, i.e. $m=6$ indicates fitting at order $t^0, t^2, t^4, t^6$
+
 ![var_m_plot](plot/RandomIsing_n=4_var_m_violin.svg)
 
 ## other bar plots

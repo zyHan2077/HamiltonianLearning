@@ -44,11 +44,11 @@ function parameterDis(s, s_re)
 end
 
 # modifiedParams:
-# (singleSensitivity, linesInPhase2, zeroSensitivity, b, n, m)
+# (singleSensitivity, linesInPhase2, zeroSensitivity, b, n, m, deltat, timeSteps)
 modifiedParams = [
-    (5e-3, 100, 3e-2, 4, 4, 2),
-    (120e-3, 100, 20e-2, 4, 4, 3), # deltat=0.006 timeSteps=12
-    (180e-3, 100, 20e-2, 4, 4, 4),] # deltat = 0.006 timeSteps=24
+    (5e-3, 100, 3e-2, 4, 4, 2, 0.01, 10),
+    (50e-3, 100, 6e-2, 4, 4, 4, 0.003, 24),
+    (80e-3, 100, 10e-2, 4, 4, 6, 0.0008, 100),]
 
 verbose = parse(Bool, ARGS[1])
 
@@ -83,7 +83,7 @@ for j in 3:3
     for hamsCount in 1:totalHams
         s = TFIsingHamiltonian1d(n)
         push!(savingItems, s);
-        ham0, oracle_f = construct_oracle_f(s, n, params["noise"], m=m, deltat=0.006, timeSteps=24)
+        ham0, oracle_f = construct_oracle_f(s, n, params["noise"], m=m, deltat=modifiedParams[j][7], timeSteps=modifiedParams[j][8])
 
         # real oracle being actually used
         # total calls is counted
