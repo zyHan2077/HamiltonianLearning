@@ -54,3 +54,27 @@ Ising, n=6
 ## box plot, demonstrating suppression of noise
 
 ![error](plot/Ising_n=4_varb_boxplot.svg)
+
+## other chemical Hamiltonians
+
+### Hchain, 4 atoms, 8 qubit, b=6, strengh * 10
+
+top 60 terms
+
+![error](plot/H4_top60_terms_barplot.svg)
+
+### Hchain, 3 atoms, 6 qubit, b=4, 5, 6, 7, strengh * 10
+
+top 20 terms
+
+![error](plot/H3_top_20_terms_barplot.svg)
+
+![error](plot/H3_n=6_varb_violin.svg)
+
+### Hchain, 2 atoms, strengh * 10
+
+full 14 terms
+
+![error](plot/H2_full14_terms_barplot.svg)
+
+![error](plot/H2_n=4_varb_violin.svg)
