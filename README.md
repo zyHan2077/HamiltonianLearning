@@ -78,3 +78,7 @@ full 14 terms
 ![error](plot/H2_full14_terms_barplot.svg)
 
 ![error](plot/H2_n=4_varb_violin.svg)
+
+### revised figure, Hchain with 4 atoms
+
+![error](plot/H4_new.svg)
