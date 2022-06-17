@@ -1,5 +1,7 @@
 # Hamiltonian Learning, utils and demos
 
+repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190)
+
 ## noise
 
 random Ising, various noise level:
