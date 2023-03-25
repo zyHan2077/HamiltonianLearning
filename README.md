@@ -1,14 +1,53 @@
 # Hamiltonian Learning, utils and demos
 
-repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190)
+Repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190). Proof-of-principles for our algorithm and 
 
-## noise
+## Overview
 
-random Ising, various noise level:
+### Oracles
 
-![ising1](plot/RandomIsing_n=4_varNoise_violin.svg)
+The oracle contained in *noisy_oracle.jl* mimics the actual evolution of the quantum system, by brutal-force state evolution under certain Hamiltonian. Specifically
+- *oracle_f* extracts the second-order pauli error rates, as defined by equation (8) and (11)
+- *oracle_s* gives the stage 2 measurements, defined by equation (15)
 
-Ising, various noise level:
+### Utils
+
+*utils.jl* implements separately all the relevant procedures described in [the article](https://arxiv.org/abs/2201.00190), for instance, bins detection and peeling process (**Fig 1. (b)**) are wrapped in doPeel().
+
+### hamLearning_xxx
+
+These files glue all the procedures together and demonstrate our algorithm under different settings (different Hamiltonian, different noise level, etc)
+
+### data folder
+
+The reconstruction results are stored in json format. Each json file contains
+- a dictionary, representing the original Hamiltonian's parameters, i.e., the $s$ in main article
+- a list of reconstructed parameters, containing
+  - the reconstructed Hamiltonian
+  - two numbers, counting the calls to the oracles in two subsequent stages.
+
+### plot folder
+
+Data analysis (with python) and results.
+
+
+
+## Selected Results
+
+- **Figure 3** in our article, demonstrating the supression of noise
+    ![error](plot/Ising_n=6_varb_boxplot.png)
+    ![ising_varb](plot/Ising_n=6_varb_violin.png)
+
+- **Figure 4 (a)** in the article, random TFIM
+    ![randomIsing_varn](plot/strictRandomIsing_n%3D1-7_violin.svg)
+
+- **Figure 4 (d)** in the article, estimated Hamiltonian for the $\text{H}_4$ (8 qubits) molecule
+    ![Molecules](plot/H4_new.svg)
+<!-- - random Ising, under various noise level:
+
+    ![ising1](plot/RandomIsing_n=4_varNoise_violin.svg)
+
+- Ising, various noise level:
 
 ![ising2](plot/Ising_n=4_varNoise_violin.svg)
 
@@ -83,4 +122,4 @@ full 14 terms
 
 ### revised figure, Hchain with 4 atoms
 
-![error](plot/H4_new.svg)
+![error](plot/H4_new.svg) -->
