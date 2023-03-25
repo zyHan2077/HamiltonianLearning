@@ -1,6 +1,6 @@
 # Hamiltonian Learning, utils and demos
 
-Repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190). Proof-of-principles for our algorithm and 
+Repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190).
 
 ## Overview
 
