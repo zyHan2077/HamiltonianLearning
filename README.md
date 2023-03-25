@@ -16,7 +16,7 @@ The oracle contained in *noisy_oracle.jl* mimics the actual evolution of the qua
 
 ### hamLearning_xxx
 
-These files glue all the procedures together and demonstrate our algorithm under different settings (different Hamiltonian, different noise level, etc)
+These files glue and invoke all the subroutines together and demonstrate our algorithm under different settings (different Hamiltonian, different noise level, etc)
 
 ### data folder
 
