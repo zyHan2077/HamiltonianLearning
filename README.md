@@ -1,26 +1,35 @@
 # Hamiltonian Learning, utils and demos
 
-Repository for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190).
+This repository contains the code and original data for [Practical and Efficient Hamiltonian Learning](https://arxiv.org/abs/2201.00190).
 
 ## Overview
 
 ### Oracles
 
-The oracle contained in *noisy_oracle.jl* mimics the actual evolution of the quantum system, by brutal-force state evolution under certain Hamiltonian. Specifically
+The oracle contained in *noisy_oracle.jl* mimics the actual evolution of the quantum system, by brutal-force state evolution under a certain Hamiltonian. Specifically
 - *oracle_f* extracts the second-order pauli error rates, as defined by equation (8) and (11)
 - *oracle_s* gives the stage 2 measurements, defined by equation (15)
 
+### HamsGen
+
+*hamsGen.jl* generates random transverse field Ising model, resulting in a Dict $s$ that shall be used as an input to the oracles.
+
 ### Utils
 
-*utils.jl* implements separately all the relevant procedures described in [the article](https://arxiv.org/abs/2201.00190), for instance, bins detection and peeling process (**Fig 1. (b)**) are wrapped in doPeel().
+*utils.jl* implements separately all the relevant procedures described in [the article](https://arxiv.org/abs/2201.00190), for instance, 
+- stage 1, bins detection and peeling process (**Fig 1. (b)**) are wrapped in doPeel(), see also **Algorithm 2** in our main text
+	- bPointSubBin() implements **Algorithm 7** described in appendix **B**
+	- subroutine binDetector() implements **Algorithm 8**
+- stage 2 sign estimation is implemented by pauliparametersReconstruction(), while the first input $\alpha s$ is the *non zero error rates support* from stage 1.
+	- the coefficients matrix $\Phi$, as defined in equation **(17)**, is constructed by the subroutine determineAllCoefficients()
 
 ### hamLearning_xxx
 
-These files glue and invoke all the subroutines together and demonstrate our algorithm under different settings (different Hamiltonian, different noise level, etc)
+These files glue and invoke all the subroutines together and demonstrate our algorithm under different settings (different Hamiltonian, different noise level, different bin size $b$, etc)
 
 ### data folder
 
-The reconstruction results are stored in json format. Each json file contains
+The reconstruction results are stored in JSON format. Each JSON file contains
 - a dictionary, representing the original Hamiltonian's parameters, i.e., the $s$ in main article
 - a list of reconstructed parameters, containing
   - the reconstructed Hamiltonian
