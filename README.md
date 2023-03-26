@@ -20,7 +20,7 @@ The oracle contained in *noisy_oracle.jl* mimics the actual evolution of the qua
 - stage 1, bins detection and peeling process (**Fig 1. (b)**) are wrapped in doPeel(), see also **Algorithm 2** in our main text
 	- bPointSubBin() implements **Algorithm 7** described in appendix **B**
 	- subroutine binDetector() implements **Algorithm 8**
-- stage 2 sign estimation is implemented by pauliparametersReconstruction(), while the first input $\alpha s$ is the *non zero error rates support* from stage 1.
+- stage 2 sign estimation (**Algorithm 3**) is implemented by pauliparametersReconstruction(), while the first input $\alpha s$ is the *non zero error rates support* from stage 1.
 	- the coefficients matrix $\Phi$, as defined in equation **(17)**, is constructed by the subroutine determineAllCoefficients()
 
 ### hamLearning_xxx
